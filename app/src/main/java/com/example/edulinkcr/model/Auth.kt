@@ -6,5 +6,8 @@ data class LoginRequest(
 )
 
 data class LoginResponse(
-    val access: String
+    val access: String,
+    val userId: Int,
+    val role: String,
+    val center: String
 )
