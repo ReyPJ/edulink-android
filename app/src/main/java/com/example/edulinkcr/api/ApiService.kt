@@ -5,12 +5,15 @@ import com.example.edulinkcr.model.User
 import com.example.edulinkcr.model.LoginRequest
 import com.example.edulinkcr.model.LoginResponse
 import com.example.edulinkcr.model.Clase
-import com.example.edulinkcr.model.createClaseItem
+import com.example.edulinkcr.model.CreateClaseItem
+import com.example.edulinkcr.model.AddStudentsToClass
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PATCH
 import retrofit2.http.Body
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
     // Users
@@ -26,6 +29,10 @@ interface ApiService {
     // Classes
     @GET("classes/")
     fun getClasses(): Call<Clase>
+    @GET("classes/")
+    fun getClassesBySubject(@Query("subject") subject: String): Call<Clase>
     @POST("classes/")
-    fun createClass(@Body clase: createClaseItem): Call<createClaseItem>
+    fun createClass(@Body clase: CreateClaseItem): Call<CreateClaseItem>
+    @PATCH("classes/{id}/")
+    fun addStudentsToClass(@Path("id") id: Int, @Body request: AddStudentsToClass): Call<AddStudentsToClass>
 }

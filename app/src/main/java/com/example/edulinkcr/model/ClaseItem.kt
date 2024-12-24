@@ -11,12 +11,18 @@ data class ClaseItem(
     val studentsName: List<String>,
     val teacher: Int,
     @SerializedName("teacher_name")
-    val teacherName: String
+    val teacherName: String,
+    val subject: String
 )
 
-data class createClaseItem(
+data class CreateClaseItem(
     val center: String,
     val name: String,
     val students: List<Int>,
-    val teacher: Int
+    val teacher: Int,
+    val subject: String
+)
+
+data class AddStudentsToClass(
+    val students: List<Int>
 )

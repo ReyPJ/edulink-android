@@ -29,6 +29,9 @@
         <activity android:name=".FullUsersListActivity"
             android:exported="true">
         </activity>
+        <activity android:name=".ClassesListActivity"
+            android:exported="true">
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

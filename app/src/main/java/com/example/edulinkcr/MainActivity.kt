@@ -121,13 +121,21 @@ fun DrawerContent(modifier: Modifier = Modifier) {
                         context.startActivity(intent)
                     })
                 Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Mis clases",
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.clickable {
+                        val intent = Intent(context, ClassesListActivity::class.java)
+                        context.startActivity(intent)
+                    })
             } else -> {
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = "Mis clases",
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.clickable {
-                        // TODO: Implementar la navegación a la pantalla de clases
+                        val intent = Intent(context, ClassesListActivity::class.java)
+                        context.startActivity(intent)
                     })
                 Spacer(modifier = Modifier.height(8.dp))
             }
